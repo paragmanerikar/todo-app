@@ -1,5 +1,10 @@
 import streamlit as st
 import storageutils as su
+import os
+
+if not su.file_exists():
+    su.create_empty_file()
+
 
 todos = su.read_todos()
 

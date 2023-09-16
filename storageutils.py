@@ -1,4 +1,5 @@
-FILENAME = r".\data\todos.txt"
+import os
+FILENAME = r"todos.txt"
 
 
 def read_todos(file_path: object = FILENAME) -> object:
@@ -11,3 +12,12 @@ def read_todos(file_path: object = FILENAME) -> object:
 def write_todos(todos,file_path=FILENAME):
     with open(file_path, 'w') as file:
         file.writelines("%s\n" % l.title() for l in todos)
+
+
+def file_exists(file_path=FILENAME):
+    return os.path.exists(file_path)
+
+
+def create_empty_file(file_path=FILENAME):
+    with open(file_path, 'w') as file:
+        pass
